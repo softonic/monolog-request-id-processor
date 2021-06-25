@@ -2,12 +2,18 @@
   "name": "softonic/monolog-request-id-processor",
   "type": "library",
   "description" : "Monolog X-Request-ID processor to add traceability to all logs",
-  "keywords": [],
+  "keywords": ["monolog", "monolog-processor", "x-request-id", "request-id"],
   "license": "Apache-2.0",
   "homepage": "https://github.com/softonic/monolog-request-id-processor",
   "support": {
     "issues": "https://github.com/softonic/monolog-request-id-processor/issues"
   },
+  "authors": [
+    {
+      "name": "Jose Manuel Cardona",
+      "email": "josemanuel.cardona@softonic.com"
+    }
+  ],
   "require": {
     "php": ">=8.0"
   },
