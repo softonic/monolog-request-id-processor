@@ -1,12 +1,12 @@
 {
-  "name": "softonic/<PACKAGE-ID>",
+  "name": "softonic/monolog-request-id-processor",
   "type": "library",
-  "description" : "<DESCRIPTION>",
+  "description" : "Monolog X-Request-ID processor to add traceability to all logs",
   "keywords": [],
   "license": "Apache-2.0",
-  "homepage": "https://github.com/softonic/<PACKAGE-ID>",
+  "homepage": "https://github.com/softonic/monolog-request-id-processor",
   "support": {
-    "issues": "https://github.com/softonic/<PACKAGE-ID>/issues"
+    "issues": "https://github.com/softonic/monolog-request-id-processor/issues"
   },
   "require": {
     "php": ">=8.0"
@@ -20,12 +20,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Softonic\\<NAMESPACE>\\Log\\": "src/"
+      "Softonic\\MonologRequestIdProcessor\\Log\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Softonic\\<NAMESPACE>\\Log\\": "tests/"
+      "Softonic\\MonologRequestIdProcessor\\Log\\": "tests/"
     }
   },
   "scripts": {
