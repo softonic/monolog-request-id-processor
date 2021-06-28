@@ -4,7 +4,7 @@ tests:
 
 .PHONY: debug
 debug:
-	docker-compose run composer run --entrypoint=bash test
+	docker-compose run --entrypoint=bash composer
 
 .PHONY: update-dependencies
 update-dependencies:
@@ -12,9 +12,9 @@ update-dependencies:
 
 .PHONY: checkstyle
 checkstyle:
-	docker-compose run composer run checkstyle
+	docker-compose run --entrypoint=bash composer -c "apk add --no-cache icu-dev && docker-php-ext-install intl && composer run checkstyle"
 
 .PHONY: fix-checkstyle
 fix-checkstyle:
 	docker-compose run composer run php-cs-fixer
-	docker-compose run composer run rector
+	docker-compose run --entrypoint=bash composer -c "apk add --no-cache icu-dev && docker-php-ext-install intl && ./vendor/bin/rector"

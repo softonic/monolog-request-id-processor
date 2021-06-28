@@ -8,12 +8,15 @@ Monolog Request Id Processor
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/softonic/monolog-request-id-processor.svg?style=flat-square)](http://isitmaintained.com/project/softonic/monolog-request-id-processor "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/softonic/monolog-request-id-processor.svg?style=flat-square)](http://isitmaintained.com/project/softonic/monolog-request-id-processor "Percentage of issues still open")
 
-Monolog X-Request-ID processor to add traceability to all logs
+Monolog X-Request-ID processor to add traceability to all logs.
+
+Processor based on the official [UidProcessor](https://github.com/Seldaek/monolog/blob/main/src/Monolog/Processor/UidProcessor.php) implementation, but using x-request-id 
+instead of `uid`.
 
 Main features
 -------------
 
-* 
+* Add to the extra logs field the x-request-id provided.
 
 Installation
 -------------
@@ -26,7 +29,15 @@ composer require softonic/monolog-request-id-processor
 ### Configuration
 
 ```php
+use Monolog\Logger;
 
+$requestId = 'fb703a2f-04ac-470c-bc6b-a4d965a7e404'; // Get x-request-id from any source instead of hardcode it.
+
+$log = new Monolog\Logger('test');
+$log->pushProcessor(new \Softonic\Monolog\Processors\RequestId($requestId));
+$log->pushHandler(…);
+
+$log->info('Interesting information about the request.');
 ```
 
 Testing
