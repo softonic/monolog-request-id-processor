@@ -4,4 +4,4 @@ services:
   composer:
     volumes:
     - ./:/app
-    image: composer
+    image: softonic/composer-rector

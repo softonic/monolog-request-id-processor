@@ -43,7 +43,11 @@
     "phpunit": "phpunit --coverage-text",
     "checkstyle": [
       "php-cs-fixer fix -v --diff --dry-run --allow-risky=yes",
-      "docker-php-ext-install && rector --dry-run"
+      "rector --dry-run"
+    ],
+    "fix-checkstyle": [
+      "@php-cs-fixer",
+      "@rector"
     ],
     "php-cs-fixer": "php-cs-fixer fix -v --diff --allow-risky=yes",
     "rector": "rector"

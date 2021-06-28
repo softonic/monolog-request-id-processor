@@ -12,9 +12,8 @@ update-dependencies:
 
 .PHONY: checkstyle
 checkstyle:
-	docker-compose run --entrypoint=bash composer -c "apk add --no-cache icu-dev && docker-php-ext-install intl && composer run checkstyle"
+	docker-compose run composer run checkstyle
 
 .PHONY: fix-checkstyle
 fix-checkstyle:
-	docker-compose run composer run php-cs-fixer
-	docker-compose run --entrypoint=bash composer -c "apk add --no-cache icu-dev && docker-php-ext-install intl && ./vendor/bin/rector"
+	docker-compose run composer run fix-checkstyle
