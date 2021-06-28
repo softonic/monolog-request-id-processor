@@ -13,11 +13,11 @@ class RequestIdTest extends TestCase
      */
     public function whenRecordIsProcessedItShouldAddTheXRequestId()
     {
-        $processor = new RequestId(':x-request-id');
+        $processor = new RequestId(':x-request-id:');
 
         $record = [];
         $record = $processor($record);
 
-        self::assertSame(':x-request-id', $record['extra']['x-request-id']);
+        self::assertSame(':x-request-id:', $record['extra']['x-request-id']);
     }
 }
